@@ -8,7 +8,7 @@ plugins {
 // KEY_PASSWORD, xem WORKFLOW.txt). Không có biến môi trường (build tay) ->
 // lùi về debug signing để vẫn ra APK cài thử.
 val ksFile = System.getenv("KEYSTORE_FILE")
-val releaseSigning = ksFile != null && java.io.File(ksFile).exists()
+val releaseSigning = ksFile != null && file(ksFile).exists()
 
 android {
     namespace = "com.example.museteam"
