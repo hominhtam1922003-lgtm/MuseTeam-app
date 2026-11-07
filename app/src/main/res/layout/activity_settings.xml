@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvBack"
+        style="@style/MtSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:text="← Quay lại"
+        android:textSize="15sp" />
+
+    <TextView
+        style="@style/MtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cài đặt" />
+
+    <TextView
+        style="@style/MtSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Repo bảng trạng thái (owner/name)" />
+
+    <EditText
+        android:id="@+id/etRepo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_input"
+        android:hint="hominhtam1922003-lgtm/muse-board"
+        android:inputType="text"
+        android:padding="12dp"
+        android:singleLine="true"
+        android:textColor="@color/text_main"
+        android:textColorHint="@color/text_faint"
+        android:textSize="14sp" />
+
+    <TextView
+        style="@style/MtSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Token GitHub (chỉ đọc)" />
+
+    <EditText
+        android:id="@+id/etToken"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_input"
+        android:hint="github_pat_…"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:singleLine="true"
+        android:textColor="@color/text_main"
+        android:textColorHint="@color/text_faint"
+        android:textSize="14sp" />
+
+    <TextView
+        style="@style/MtFaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:lineSpacingMultiplier="1.35"
+        android:text="Dán token fine-grained chỉ-đọc (Contents: Read-only) của repo bảng. Token chỉ lưu trong bộ nhớ riêng của app trên máy này — app không gửi đi nơi nào khác ngoài api.github.com." />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_btn_gradient"
+        android:minHeight="48dp"
+        android:text="Lưu và tải lại"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSettingsMsg"
+        style="@style/MtSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" />
+</LinearLayout>

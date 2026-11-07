@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MuseTeam" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/accent_pink</item>
+        <item name="android:windowBackground">@color/bg_main</item>
+        <item name="android:statusBarColor">@color/bg_main</item>
+        <item name="android:navigationBarColor">@color/bg_main</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:textColorPrimary">@color/text_main</item>
+        <item name="android:textColorSecondary">@color/text_sub</item>
+    </style>
+
+    <style name="MtTitle">
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MtName">
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MtBody">
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="MtSub">
+        <item name="android:textColor">@color/text_sub</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MtFaint">
+        <item name="android:textColor">@color/text_faint</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>
