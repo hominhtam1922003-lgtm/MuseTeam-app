@@ -44,6 +44,8 @@ jobs:
         run: |
           if [ -n "$KEYSTORE_B64" ]; then
             echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            ls -l "$RUNNER_TEMP/release.jks"
+            
             echo "KEYSTORE_FILE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
           else
             echo "::warning::Thiếu secret KEYSTORE_B64 — APK sẽ ký bằng debug key"
