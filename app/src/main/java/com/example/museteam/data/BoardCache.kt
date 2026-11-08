@@ -68,7 +68,7 @@ class BoardCache(private val dir: File) {
         return BoardSnapshot(batch.reports, fetchedAt, skippedMeta + batch.skipped)
     }
 
-    /** Đường dẫn cache của 1 avatar: làm phẳng "avatars/tong-98.webp" -> "avatars_tong-98.webp". */
+    /** Đường dẫn cache của 1 avatar: làm phẳng "avatars/gaia.webp" -> "avatars_gaia.webp". */
     fun avatarFile(avatarPath: String): File {
         val flat = avatarPath.replace('/', '_')
             .replace(Regex("[^A-Za-z0-9._-]"), "_")

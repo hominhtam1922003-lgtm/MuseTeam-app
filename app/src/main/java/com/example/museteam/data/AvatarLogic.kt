@@ -18,8 +18,8 @@ object AvatarLogic {
     )
 
     /**
-     * Tên kết thúc bằng số -> lấy số ("Nhánh 97" -> "97", "Tổng 98" -> "98");
-     * còn lại lấy chữ cái đầu ("Lưu Diệc Phi" -> "L").
+     * Tên kết thúc bằng số -> lấy số ("Muse 7" -> "7");
+     * còn lại lấy chữ cái đầu ("Gaia" -> "G", "Zeus" -> "Z").
      */
     fun initialsFor(name: String): String {
         val trimmed = name.trim()

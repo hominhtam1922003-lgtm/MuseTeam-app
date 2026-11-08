@@ -72,11 +72,18 @@ data class AccountGroup(
 
 object ExpectedTeam {
 
-    /** Đội hình kỳ vọng nạp sẵn — id chưa có báo cáo thì hiện "chưa nối báo cáo". */
+    /** Đội hình kỳ vọng nạp sẵn — id chưa có báo cáo thì hiện "chưa nối báo cáo".
+     *  id = tên thần Hy Lạp trần (bảng muse-board đã đổi id ngày 08/11/2026). */
     val EXPECTED: List<ExpectedMember> = listOf(
-        ExpectedMember("tong-98", "Lưu Diệc Phi"),
-        ExpectedMember("nhanh-97", "Nhánh 97"),
-        ExpectedMember("nhanh-96", "Nhánh 96")
+        ExpectedMember("gaia", "Gaia"),
+        ExpectedMember("athena", "Athena"),
+        ExpectedMember("hermes", "Hermes"),
+        ExpectedMember("apollo", "Apollo"),
+        ExpectedMember("artemis", "Artemis"),
+        ExpectedMember("zeus", "Zeus"),
+        ExpectedMember("poseidon", "Poseidon"),
+        ExpectedMember("hades", "Hades"),
+        ExpectedMember("hera", "Hera")
     )
 
     /**
