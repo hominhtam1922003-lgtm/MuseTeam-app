@@ -107,8 +107,29 @@ object ExpectedTeam {
         val groups = LinkedHashMap<String, MutableList<MuseReport>>()
         for (r in reports) groups.getOrPut(accountKey(r)) { mutableListOf() } += r
         return groups.map { (key, members) ->
-            AccountGroup(key, members.first().accountLabel, members)
+            // Tiêu đề nhóm: nhóm theo email thì chính là email đó; chỉ khi
+            // thiếu email (nhóm theo nhãn) mới rơi về account_label.
+            val first = members.first()
+            AccountGroup(key, first.accountEmail.ifBlank { first.accountLabel }, members)
         }
+    }
+
+    /**
+     * Dòng Gmail ở màn chi tiết: có email thì hiện rõ "Gmail: <email>",
+     * trống/chưa có báo cáo -> "Gmail: chưa báo" (không để trống lặng lẽ).
+     */
+    fun gmailLine(r: MuseReport?): String {
+        val email = r?.accountEmail?.trim().orEmpty()
+        return if (email.isNotBlank()) "Gmail: $email" else "Gmail: chưa báo"
+    }
+
+    /**
+     * Tiêu đề 1 hàng ở tab Tài khoản: ưu tiên email của chính member làm
+     * dòng chính, thiếu email mới dùng nhãn nhóm, cả hai đều trống -> "Tài khoản".
+     */
+    fun accountTitle(groupLabel: String, member: MuseReport): String {
+        val head = member.accountEmail.ifBlank { groupLabel }.ifBlank { "Tài khoản" }
+        return "$head · ${member.name}"
     }
 
     /** Dòng tóm tắt 1 tài khoản: "Tuần: còn X% · reset dd/MM · Token phụ còn …" */

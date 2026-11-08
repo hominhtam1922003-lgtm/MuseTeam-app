@@ -32,6 +32,7 @@ class DetailActivity : AppCompatActivity() {
         val avatar = findViewById<AvatarView>(R.id.avatarDetail)
         val tvName = findViewById<TextView>(R.id.tvDetailName)
         val tvRole = findViewById<TextView>(R.id.tvDetailRole)
+        val tvEmail = findViewById<TextView>(R.id.tvDetailEmail)
         val activityBlock = findViewById<LinearLayout>(R.id.activityBlock)
         val tvActDot = findViewById<TextView>(R.id.tvActDot)
         val tvActivity = findViewById<TextView>(R.id.tvActivity)
@@ -51,6 +52,7 @@ class DetailActivity : AppCompatActivity() {
             // Hàng kỳ vọng chưa có báo cáo.
             tvName.text = fallbackName
             tvRole.text = "Chưa nối báo cáo"
+            tvEmail.text = ExpectedTeam.gmailLine(null)
             avatar.setData(fallbackName, null)
             activityBlock.visibility = View.GONE
             tvSince.visibility = View.GONE
@@ -68,6 +70,7 @@ class DetailActivity : AppCompatActivity() {
             .filter { it.isNotBlank() }
             .joinToString(" · ")
         tvRole.text = roleLine
+        tvEmail.text = ExpectedTeam.gmailLine(report)
         avatar.setData(report.name, BoardStore.cache(this).avatarFileFor(report))
 
         // --- Hoạt động sống ---

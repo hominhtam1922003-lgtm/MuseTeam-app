@@ -208,13 +208,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun accountRowView(accountLabel: String, member: MuseReport): View {
+    private fun accountRowView(groupLabel: String, member: MuseReport): View {
         val v = layoutInflater.inflate(R.layout.item_account, listContainer, false)
         val tvTitleRow = v.findViewById<TextView>(R.id.tvTitle)
         val tvSub = v.findViewById<TextView>(R.id.tvSub)
         val tvOpen = v.findViewById<TextView>(R.id.tvOpen)
-        val label = accountLabel.ifBlank { "Tài khoản" }
-        tvTitleRow.text = "$label · ${member.name}"
+        // Dòng chính của hàng: email đăng nhập của member (thiếu email mới
+        // rơi về nhãn nhóm / "Tài khoản") — xem ExpectedTeam.accountTitle.
+        tvTitleRow.text = ExpectedTeam.accountTitle(groupLabel, member)
         tvSub.text = ExpectedTeam.accountLine(member)
         tvOpen.setOnClickListener { UiUtil.openMuse(this) }
         v.setOnClickListener {
